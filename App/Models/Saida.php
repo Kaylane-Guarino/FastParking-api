@@ -8,7 +8,7 @@ class Saida{
 
     public function getDadosValorApagar($id) {
 
-        $sql = " SELECT dataEntrada, horaEntrada from tbl_estacionamento WHERE id = ? ";
+        $sql = " SELECT dataEntrada, horaEntrada from tblRegistro WHERE id = ? ";
 
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -32,7 +32,7 @@ class Saida{
 
     public function atualizar(){
 
-        $sql = " UPDATE tbl_estacionamento SET dataSaida = ?, horaSaida = ?, ativo = ?, valorTotal = ? WHERE id = ? ";
+        $sql = " UPDATE tblRegistro SET dataSaida = ?, horaSaida = ?, ativo = ?, valorTotal = ? WHERE id = ? ";
 
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->retornaDataHora()[0]);

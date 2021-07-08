@@ -87,13 +87,10 @@ class Clientes extends Controller{
             echo json_encode($cliente, JSON_UNESCAPED_UNICODE);
         }else{
             http_response_code(404);
-            echo json_encode(["erro" => "Problemas para buscar o cliente"]);
+            echo json_encode(["erro" => "Cliente não encontrado"]);
         }
     }
 
-    public function saida($idCliente){
-              
-    }
 }
 
 ?>

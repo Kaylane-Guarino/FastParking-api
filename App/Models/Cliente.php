@@ -11,7 +11,7 @@ class Cliente
     public $valorTotal;
 
     public function listAll(){
-        $sql = "SELECT * from tbl_estacionamento";
+        $sql = "SELECT * from tblRegistro";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
@@ -31,7 +31,7 @@ class Cliente
 
     public function inserir(){
 
-        $sql = "INSERT into tbl_estacionamento 
+        $sql = "INSERT into tblRegistro 
                     (nome, placa, dataEntrada, horaEntrada, ativo) values(?, ?, ?, ?, ?)";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->nome);
@@ -49,7 +49,7 @@ class Cliente
     }
 
     public function buscarPorId($id){
-        $sql = " SELECT * FROM tbl_estacionamento WHERE id = ? ";
+        $sql = " SELECT * FROM tblRegistro WHERE id = ? ";
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();
@@ -67,7 +67,7 @@ class Cliente
     }
 
     public function atualizar(){
-        $sql = "UPDATE tbl_estacionamento set nome = ?, placa = ? WHERE id = ?";
+        $sql = "UPDATE tblRegistro set nome = ?, placa = ? WHERE id = ?";
         
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->nome);
@@ -78,7 +78,7 @@ class Cliente
     }
 
     public function delete(){
-        $sql = "DELETE FROM tbl_estacionamento WHERE id = ?";
+        $sql = "DELETE FROM tblRegistro WHERE id = ?";
         
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->id);

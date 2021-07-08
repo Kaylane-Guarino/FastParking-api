@@ -9,7 +9,7 @@ class Preco{
     public $valorDemaisHoras;
 
     public function listAll(){
-        $sql = "SELECT * from tbl_preco";
+        $sql = "SELECT * from tblpreco";
 
         $stmt = Model::getConn()->prepare($sql);
         $stmt->execute();
@@ -22,7 +22,7 @@ class Preco{
     }
 
     public function inserir(){
-        $sql = "INSERT into tbl_preco
+        $sql = "INSERT into tblpreco
                     (valorPrimeiraHora,
                     valorDemaisHoras) 
                         values(?,
@@ -41,7 +41,7 @@ class Preco{
     }
 
     public function buscarPorId($id){
-        $sql = " SELECT * FROM tbl_preco WHERE id = ? ";
+        $sql = " SELECT * FROM tblpreco WHERE id = ? ";
 
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -59,7 +59,7 @@ class Preco{
     }
 
     public function atualizar(){
-        $sql = "UPDATE tbl_preco set valorPrimeiraHora = ?, valorDemaisHoras = ? WHERE id = ?";
+        $sql = "UPDATE tblpreco set valorPrimeiraHora = ?, valorDemaisHoras = ? WHERE id = ?";
         
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->valorPrimeiraHora);
