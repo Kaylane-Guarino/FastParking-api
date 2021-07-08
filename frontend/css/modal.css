@@ -1,0 +1,156 @@
+.button{
+    border-style: none;
+    padding: 0 20px;
+    min-height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+.close-button {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: lightslategray;
+}
+
+.close-button:hover{
+    background-color: #ff4949;
+    cursor: pointer;
+    color: white;
+    border-radius: 0 5px 0 0;
+}
+
+.form{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.input-field {
+    width: calc(50% - 10px);
+    height: 40px;
+    padding: 0 14px;
+    font-size: 16px;
+    border-radius: 3px;
+    border-style: none;
+    outline-style: none;
+    border: 1px solid #DDDDDD
+}
+
+.input-field:focus {
+    border: 2px solid #1fb6ff;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50vw;
+    margin: 15vh auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px black;
+}
+
+.modal-footer {
+    text-align: right;
+    height: 60px;
+    gap: 20px;
+    border-top: 1px solid #DDDDDD;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 15px 0px 0px;
+
+    background-color: inherit;
+}
+
+.form-modal{
+   display: grid;
+   grid-template-columns: 1fr;
+   margin-left: 50px;
+}
+
+.form-modal label{
+    margin-top: 10px;
+}
+.modal-header {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 5px 5px 0 0;
+    background-color: inherit;
+}
+
+.modal-header>h1{
+    margin: 0 auto;
+    color: black;
+    font-weight: normal;
+    text-shadow: 0px 0px 1px grey;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.input-field {
+    width: calc(50% - 10px);
+    height: 25px;
+    padding: 0 14px;
+    font-size: 16px;
+    border-radius: 5px;
+    border-style: none;
+    outline-style: none;
+    margin-top: 10px;
+    border: 1px solid #DDDDDD
+}
+
+.input-field:focus {
+    border: 2px solid #004C81;
+}
+
+.modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000090;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    z-index: -10;
+    opacity: 0;
+    user-select: none;
+    transition: all .3s;
+}
+
+.modal.active{
+    z-index: 5000;
+    opacity: 1;
+}
+
+@media (max-width:480px){
+    .modal-content{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-field{
+        width: 100%;
+    }
+}
+
+@media (max-width:480px) {
+    .header{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:480px){
+    .button{
+       margin: auto;
+    }
+}

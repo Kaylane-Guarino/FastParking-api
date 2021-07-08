@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastParking</title>
+    <link rel="stylesheet" href="./css/style-global.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Sistema FastParking</h1>
+        <figure>
+            <img src="./img/fastparking.png" alt="">
+        </figure>
+    </header>
+    <main>
+        <div class="container-modal" id="inserirCliente">
+            <form class="form" id="formInserirCliente">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" required data-index="" id="nome" placeholder="Nome" />
+                </div>
+                <div class="input-group">
+                    <label for="placa">Placa</label>
+                    <input type="text" required pattern="\D{3}-?\d{4}" maxlength="8" name="placa" id="placa"
+                        placeholder="BMW-4528" />
+                </div>
+            </form>
+            <div class="modal-footer-init">
+                <button class="button green" id="salvar">Salvar</button>
+                <button type="button" class="button blue" id="precos">Preços</button>
+            </div>
+        </div>
+        <table class="table" id="tabelaClientes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+
+                <header class="modal-header">
+                    <H1 id="tituloModal">Inserir preços</H1>
+                    <span class="close-button" id="close">&#10006;</span>
+                </header>
+
+                <form class="form-modal">
+                    <label for="umaHora">Uma hora</label>
+                    <input class="input-field" data-index="" type="text" id="umaHora" placeholder="R$ 10,00" required />
+                    <label for="demaisHoras">Demais horas</label>
+                    <input class="input-field" type="text" id="demaisHoras" placeholder="R$ 5,00" required />
+                </form>
+
+                <footer class="modal-footer">
+                    <button type="submit" class="button green" id="btnSalvarPreco">Salvar</button>
+                    <button type="button" class="button blue" id="cancelar">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal-saida">
+        <div class="modal-content">
+            <header class="modal-header">
+                <H1 id="tituloModal">Saida</H1>
+                <span class="close-button" id="closeSaida">&#10006;</span>
+            </header>
+
+            <form class="form-modal" id="form-saida">
+                <div>
+                    <label for="nomeSaida">Nome</label>
+                    <input class="input-field" disabled="" data-index="" id="nomeSaida" type="text" required />
+                </div>
+                <div>
+                    <label for="placaSaida">Placa</label>
+                    <input class="input-field" disabled="" type="text" id="placaSaida" placeholder="" required />
+                </div>
+
+                <div>
+                    <label for="dataEntrada">Data Entrada</label>
+                    <input class="input-field" disabled="" type="text" id="dataEntrada" placeholder="" required />
+                </div>
+                <div>
+                    <label for="dataSaida">Data saída</label>
+                    <input class="input-field" disabled="" type="text" id="dataSaida" placeholder="" required />
+                </div>
+                <div>
+                    <label for="horaEntrada">Hora Entrada</label>
+                    <input class="input-field" disabled="" type="text" id="horaEntrada" placeholder="" required />
+                </div>
+
+                <div>
+                    <label for="horaSaida">Hora saída</label>
+                    <input class="input-field" disabled="" type="text" id="horaSaida" placeholder="" required />
+                </div>
+                <div>
+                    <label for="valorTotal">Valor total</label>
+                    <input class="input-field" disabled="" type="text" id="valorTotal" placeholder="" required />
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+
+                <button type="submit" class="button green" id="btnPago">Pago</button>
+                <button type="submit" class="button red" id="btnComprovante">Comprovante</button>
+                <button type="button" class="button blue" id="btnCancelarSaida">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+    </main>
+
+    <footer id="footer-init">
+        <div>
+            <small>Copyright &copy; Kaylane Guarino</small>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
