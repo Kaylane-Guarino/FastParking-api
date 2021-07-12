@@ -5,8 +5,8 @@ class Cliente
     public $id;
     public $nome;
     public $placa;
-    public $data;
-    public $hora;
+    public $dataEntrada;
+    public $horaEntrada;
     public $ativo;
     public $valorTotal;
 
@@ -58,6 +58,8 @@ class Cliente
             $this->id = $entrada->id;
             $this->nome = $entrada->nome;
             $this->placa = $entrada->placa;
+            $this->dataEntrada = $entrada->dataEntrada;
+            $this->horaEntrada = $entrada->horaEntrada;
             $this->ativo = $entrada->ativo;
             $this->valorTotal = $entrada->valorTotal;
             return $this;
@@ -67,12 +69,22 @@ class Cliente
     }
 
     public function atualizar(){
-        $sql = "UPDATE tblRegistro set nome = ?, placa = ? WHERE id = ?";
+        $sql = "UPDATE tblRegistro set nome = ?, placa = ?, ativo = ? WHERE id = ?";
         
         $stmt = Model::getConn()->prepare($sql);
         $stmt->bindValue(1, $this->nome);
         $stmt->bindValue(2, $this->placa);
-        $stmt->bindValue(3, $this->id);
+        $stmt->bindValue(3, $this->ativo);
+        $stmt->bindValue(4, $this->id);
+
+        return $stmt->execute();
+    }
+
+    public function saida(){
+        $sql = "UPDATE tblRegistro set ativo = false WHERE id = ?";
+        
+        $stmt = Model::getConn()->prepare($sql);
+        $stmt->bindValue(1, $this->id);
 
         return $stmt->execute();
     }

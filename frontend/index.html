@@ -7,7 +7,7 @@
     <title>FastParking</title>
     <link rel="stylesheet" href="./css/style-global.css">
     <link rel="stylesheet" href="./css/modal.css">
-    <script src="./js/script.js" defer></script>
+    <script src="./js/main2.js" defer></script>
 </head>
 
 <body>
@@ -72,6 +72,39 @@
         </div>
     </main>
 
+    <div class="modal" id="modal-entrada">
+        <div class="modal-content">
+            <header class="modal-header">
+                <H1 id="tituloModal">Entrada</H1>
+                <span class="close-button" id="closeEntrada">&#10006;</span>
+            </header>
+
+            <form class="form-modal" id="form-entrada">
+                <div>
+                    <label for="nomeEntrada">Nome</label>
+                    <input class="input-field" disabled="" data-index="" id="nomeEntrada" type="text" required />
+                </div>
+                <div>
+                    <label for="placaEntrada">Placa</label>
+                    <input class="input-field" disabled="" type="text" id="placaEntrada" placeholder="" required />
+                </div>
+
+                <div>
+                    <label for="dataEntrada">Data Entrada</label>
+                    <input class="input-field" disabled="" type="text" id="dataEntrada" placeholder="" required />
+                </div>
+                <div>
+                    <label for="horaEntrada">Hora Entrada</label>
+                    <input class="input-field" disabled="" type="text" id="horaEntrada" placeholder="" required />
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="button green" id="btnComprovante">Imprimir</button>
+                <button type="button" class="button red" id="btnCancelarComp">Cancelar</button>
+            </footer>
+        </div>
+    </div>
     <div class="modal" id="modal-saida">
         <div class="modal-content">
             <header class="modal-header">
@@ -90,16 +123,16 @@
                 </div>
 
                 <div>
-                    <label for="dataEntrada">Data Entrada</label>
-                    <input class="input-field" disabled="" type="text" id="dataEntrada" placeholder="" required />
+                    <label for="dataEnter">Data Entrada</label>
+                    <input class="input-field" disabled="" type="text" id="dataEnter" placeholder="" required />
                 </div>
                 <div>
                     <label for="dataSaida">Data saída</label>
                     <input class="input-field" disabled="" type="text" id="dataSaida" placeholder="" required />
                 </div>
                 <div>
-                    <label for="horaEntrada">Hora Entrada</label>
-                    <input class="input-field" disabled="" type="text" id="horaEntrada" placeholder="" required />
+                    <label for="horaEnter">Hora Entrada</label>
+                    <input class="input-field" disabled="" type="text" id="horaEnter" placeholder="" required />
                 </div>
 
                 <div>
@@ -113,10 +146,8 @@
             </form>
 
             <footer class="modal-footer">
-
                 <button type="submit" class="button green" id="btnPago">Pago</button>
-                <button type="submit" class="button red" id="btnComprovante">Comprovante</button>
-                <button type="button" class="button blue" id="btnCancelarSaida">Cancelar</button>
+                <button type="button" class="button red" id="btnCancelarSaida">Cancelar</button>
             </footer>
         </div>
     </div>

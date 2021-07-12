@@ -46,11 +46,19 @@ class Router{
                 $this->controllerMethod = "inserir";
                 break;
             case "PUT":
+                // if($this->controller == "saidas"){
+                //     $this->controllerMethod = "calcularPreco";
+                //     $this->getParams($url);
+                // }
                 $this->controllerMethod = "update";
                 $this->getParams($url);
                 break;
             case "DELETE":
                 $this->controllerMethod = "delete";
+                $this->getParams($url);
+                break;
+            case "PATCH":
+                $this->controllerMethod = "updateSaida";
                 $this->getParams($url);
                 break;
             default:

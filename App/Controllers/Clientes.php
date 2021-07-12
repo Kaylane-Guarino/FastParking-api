@@ -51,6 +51,7 @@ class Clientes extends Controller{
 
         $clienteModel->nome = $editClient->nome;
         $clienteModel->placa = $editClient->placa;
+        $clienteModel->ativo = $editClient->ativo;
 
         if ($clienteModel->atualizar()) {   
             http_response_code(204);
@@ -88,6 +89,31 @@ class Clientes extends Controller{
         }else{
             http_response_code(404);
             echo json_encode(["erro" => "Cliente não encontrado"]);
+        }
+    }
+
+    public function updateSaida($idCliente){
+        $clienteEditar = $this->getRequestBody();
+
+        $clienteModel = $this->model("Cliente");
+        $clienteModel = $clienteModel->buscarPorId($idCliente);
+
+        if (!$clienteModel) {
+
+            http_response_code(404);
+            echo json_encode(["ERRO" => "Cliente não encontrada"]);
+            exit;
+        }
+
+        $clienteModel->ativo = $clienteEditar->ativo;
+
+        if ($clienteModel->saida()) {
+
+            http_response_code(204);
+        } else {
+
+            http_response_code(500);
+            echo json_encode(["ERRO" => "Problemas ao editar entrada"]);
         }
     }
 
